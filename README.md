@@ -1,6 +1,20 @@
-# TravelGo - Travel Booking Concept
+# TravelGo - Your Premium Travel Booking Platform
 
-A concept travel booking interface showcasing modern UI/UX design principles and interactive components.
+TravelGo is a modern, user-friendly travel booking website that allows users to explore global destinations, browse curated travel packages, and book their dream vacations with ease. Designed with a mobile-first, responsive UI and powered by a Node.js/Express backend with MongoDB, TravelGo offers a seamless experience for travelers and travel agencies alike.
+
+## Key Features
+
+- **Browse Destinations:** Discover destinations worldwide, filter by region or type, and view detailed descriptions and images.
+- **Curated Packages:** Explore a variety of travel packages with pricing, duration, and destination details.
+- **Easy Booking:** Book packages directly through an intuitive, secure booking form.
+- **Dynamic Search & Filters:** Find the perfect trip using advanced search and filtering options.
+- **Mobile-First Design:** Fully responsive layout using Tailwind CSS for a great experience on any device.
+- **Interactive Maps:** Visualize destinations with integrated maps.
+- **Modern UI/UX:** Clean, attractive design with smooth navigation and engaging visuals.
+- **Backend API:** Robust RESTful API for destinations, packages, and bookings.
+- **Admin Scripts:** Bulk add and manage destinations and packages via backend scripts.
+
+TravelGo is ideal for travel agencies, tour operators, or anyone looking to showcase and manage travel offerings online.
 
 ## Features
 
