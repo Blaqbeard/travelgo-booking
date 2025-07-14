@@ -1,3 +1,4 @@
+const API_BASE_URL = "https://travelgo-booking.onrender.com";
 // Mobile menu toggle
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -137,7 +138,7 @@ function updateLoadMoreDestinationsButton() {
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.endsWith("destinations.html")) {
-    fetch("http://localhost:5000/api/destinations")
+    fetch(`${API_BASE_URL}/api/destinations`)
       .then((res) => res.json())
       .then((destinations) => {
         allDestinations = destinations;
@@ -227,7 +228,7 @@ const packagesPerPage = 6;
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.endsWith("packages.html")) {
-    fetch("http://localhost:5000/api/packages")
+    fetch(`${API_BASE_URL}/api/packages`)
       .then((res) => res.json())
       .then((packages) => {
         allPackages = packages;
@@ -423,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
       guests: document.getElementById("fullpage-booking-guests").value,
       message: document.getElementById("fullpage-booking-message").value,
     };
-    fetch("http://localhost:5000/api/bookings", {
+    fetch(`${API_BASE_URL}/api/bookings`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -483,7 +484,7 @@ function closeBookingModal() {
 
 function openDetailsModal(packageId) {
   // Fetch package details from API
-  fetch(`http://localhost:5000/api/packages/${packageId}`)
+  fetch(`${API_BASE_URL}/api/packages/${packageId}`)
     .then((res) => res.json())
     .then((package) => {
       const detailsContainer = document.getElementById("packageDetails");
@@ -552,7 +553,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       // Submit booking to backend
-      fetch("http://localhost:5000/api/bookings", {
+      fetch(`${API_BASE_URL}/api/bookings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -579,7 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- SPA Router for Booking Page ---
 function renderBookingPage(packageId) {
   // Fetch package details and render booking form
-  fetch(`http://localhost:5000/api/packages/${packageId}`)
+  fetch(`${API_BASE_URL}/api/packages/${packageId}`)
     .then((res) => res.json())
     .then((pkg) => {
       document.body.innerHTML = `
@@ -664,7 +665,7 @@ function renderBookingPage(packageId) {
           guests: document.getElementById("spa-booking-guests").value,
           message: document.getElementById("spa-booking-message").value,
         };
-        fetch("http://localhost:5000/api/bookings", {
+        fetch(`${API_BASE_URL}/api/bookings`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
