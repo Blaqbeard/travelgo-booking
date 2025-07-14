@@ -12,8 +12,19 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse JSON
 app.use(express.json());
 
-// Allow all origins for development
-app.use(cors());
+// Allow specific origins for production
+app.use(
+  cors({
+    origin: [
+      "https://blaqbeard.github.io",
+      "https://blaqbeard.github.io/",
+      "http://localhost:3000",
+      "http://localhost:5500",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: false,
+  })
+);
 
 const destinationRoutes = require("./routes/destinationRoutes");
 app.use("/api/destinations", destinationRoutes);
