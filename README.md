@@ -31,8 +31,8 @@ TravelGo is ideal for travel agencies, tour operators, or anyone looking to show
 - CSS3
 - JavaScript
 - Tailwind CSS
-- PHP
-- MySQL
+- Node.js
+- MongoDB Atlas
 
 ## Installation
 
