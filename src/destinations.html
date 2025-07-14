@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destinations - TravelGO</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans text-gray-800 overflow-x-hidden bg-sky-500">
+    <!-- Header (same as about.html, with active link for Destinations) -->
+    <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="logo flex items-center">
+            <a href="index.html" class="flex items-center">
+              <img src="./images/logo.png" alt="logo" class="h-10 w-auto" />
+              <span class="ml-2 text-xl font-bold text-sky-500">TravelGO</span>
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <button
+              id="menu-toggle"
+              class="text-gray-500 hover:text-sky-500 focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-sky-500 transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-sky-500 transition-colors duration-300"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-sky-500 hover:text-sky-600 font-medium"
+                  >Destination</a
+                >
+              </li>
+              <li>
+                <a
+                  href="packages.html"
+                  class="hover:text-sky-500 transition-colors duration-300"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#testimonials-us"
+                  class="hover:text-sky-500 transition-colors duration-300"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact-us"
+                  class="hover:text-sky-500 transition-colors duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="hidden md:block">
+            <a
+              href="packages.html"
+              class="bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+              >Book Now</a
+            >
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden">
+          <ul class="flex flex-col space-y-4 py-4">
+            <li>
+              <a href="index.html" class="block hover:text-sky-500">Home</a>
+            </li>
+            <li>
+              <a href="about.html" class="block hover:text-sky-500">About</a>
+            </li>
+            <li>
+              <a href="destinations.html" class="block text-sky-500"
+                >Destination</a
+              >
+            </li>
+            <li>
+              <a href="packages.html" class="block hover:text-sky-500"
+                >Packages</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#testimonials-us"
+                class="block hover:text-sky-500"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a href="index.html#contact-us" class="block hover:text-sky-500"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="packages.html"
+                class="bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded-lg text-center mt-2"
+                >Book Now</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section
+        class="hero bg-gradient-to-br from-sky-500 to-blue-500 text-white py-16 md:py-24"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <h1
+              class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              data-animate="fade-up"
+            >
+              Explore Our Destinations
+            </h1>
+            <p
+              class="text-lg mb-8 text-sky-100"
+              data-animate="fade-up"
+              data-delay="100"
+            >
+              Discover breathtaking locations around the world with our curated
+              selection of destinations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Section -->
+      <section class="py-12 bg-sky-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto"
+            data-animate="zoom-in"
+          >
+            <h2 class="text-2xl font-bold text-center mb-6">
+              Find Your Perfect Destination
+            </h2>
+            <form class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label for="destination" class="block text-gray-700 mb-2"
+                  >Destination</label
+                >
+                <select
+                  id="destination"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+                  <option value="">Any Destination</option>
+                  <option value="asia">Asia</option>
+                  <option value="europe">Europe</option>
+                  <option value="africa">Africa</option>
+                  <option value="americas">Americas</option>
+                  <option value="oceania">Oceania</option>
+                </select>
+              </div>
+              <div>
+                <label for="type" class="block text-gray-700 mb-2"
+                  >Trip Type</label
+                >
+                <select
+                  id="type"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+                  <option value="">Any Type</option>
+                  <option value="beach">Beach</option>
+                  <option value="mountain">Mountain</option>
+                  <option value="city">City</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="cultural">Cultural</option>
+                </select>
+              </div>
+              <div class="flex items-end">
+                <button
+                  type="button"
+                  class="w-full bg-sky-500 hover:bg-sky-600 text-white font-medium p-3 rounded-lg transition-colors duration-300"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Destinations -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Popular Destinations
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Our most sought-after travel destinations loved by our customers.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            id="destinations-list"
+          ></div>
+
+          <div class="text-center mt-12">
+            <button
+              id="load-more-destinations"
+              class="bg-sky-500 hover:bg-sky-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
+            >
+              Load More Destinations
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Regions Section -->
+      <section class="py-16 bg-sky-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Explore By Region
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Discover destinations grouped by geographical regions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="#" class="group" data-animate="fade-up" data-delay="100">
+              <div class="relative h-48 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="images/asia.jpg"
+                  alt="Asia"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-opacity-30 flex items-center justify-center"
+                >
+                  <h3
+                    class="text-white text-xl font-bold group-hover:text-sky-300 transition-colors duration-300"
+                  >
+                    Asia
+                  </h3>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="group" data-animate="fade-up" data-delay="150">
+              <div class="relative h-48 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="images/europe.jpg"
+                  alt="Europe"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-opacity-30 flex items-center justify-center"
+                >
+                  <h3
+                    class="text-white text-xl font-bold group-hover:text-sky-300 transition-colors duration-300"
+                  >
+                    Europe
+                  </h3>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="group" data-animate="fade-up" data-delay="200">
+              <div class="relative h-48 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="images/africa.jpg"
+                  alt="Africa"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-opacity-30 flex items-center justify-center"
+                >
+                  <h3
+                    class="text-white text-xl font-bold group-hover:text-sky-300 transition-colors duration-300"
+                  >
+                    Africa
+                  </h3>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="group" data-animate="fade-up" data-delay="250">
+              <div class="relative h-48 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="images/americas.jpg"
+                  alt="Americas"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-opacity-30 flex items-center justify-center"
+                >
+                  <h3
+                    class="text-white text-xl font-bold group-hover:text-sky-300 transition-colors duration-300"
+                  >
+                    Americas
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Why Choose Our Destinations
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              What makes our selected destinations special.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-sky-50 p-6 rounded-lg"
+              data-animate="fade-up"
+              data-delay="100"
+            >
+              <div class="text-sky-500 text-3xl mb-4">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Curated Selection</h3>
+              <p class="text-gray-600">
+                We carefully select destinations that offer exceptional
+                experiences, cultural richness, and natural beauty.
+              </p>
+            </div>
+
+            <div
+              class="bg-sky-50 p-6 rounded-lg"
+              data-animate="fade-up"
+              data-delay="200"
+            >
+              <div class="text-sky-500 text-3xl mb-4">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Safety First</h3>
+              <p class="text-gray-600">
+                All our destinations meet strict safety standards with trusted
+                local partners.
+              </p>
+            </div>
+
+            <div
+              class="bg-sky-50 p-6 rounded-lg"
+              data-animate="fade-up"
+              data-delay="300"
+            >
+              <div class="text-sky-500 text-3xl mb-4">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Local Expertise</h3>
+              <p class="text-gray-600">
+                Our destination experts provide insider knowledge for authentic
+                experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-16 bg-sky-500 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold mb-6" data-animate="fade-up">
+            Ready to Explore?
+          </h2>
+          <p
+            class="text-xl mb-8 max-w-2xl mx-auto text-sky-100"
+            data-animate="fade-up"
+            data-delay="100"
+          >
+            Find the perfect package for your dream destination.
+          </p>
+          <div data-animate="fade-up" data-delay="200">
+            <a
+              href="packages.html"
+              class="inline-flex items-center bg-white text-sky-500 hover:bg-sky-100 px-8 py-4 rounded-lg font-medium text-lg transition-colors duration-300"
+            >
+              View All Packages <i class="bi bi-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+          <!-- Company Info -->
+          <div>
+            <div class="flex items-center mb-6">
+              <a href="index.html" class="flex items-center">
+                <img src="./images/logo.png" alt="logo" class="h-10 w-auto" />
+                <span class="ml-2 text-xl font-bold text-sky-500"
+                  >TravelGO</span
+                >
+              </a>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Your trusted partner for unforgettable travel experiences around
+              the world. We make your dreams come true.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+              >
+                <i class="bi bi-facebook text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+              >
+                <i class="bi bi-twitter text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+              >
+                <i class="bi bi-instagram text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+              >
+                <i class="bi bi-linkedin text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Popular Destinations -->
+          <div>
+            <h4 class="text-xl font-bold mb-4">Popular Destinations</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-300 hover:text-white transition-colors duration-300"
+                  >Bali, Indonesia</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-300 hover:text-white transition-colors duration-300"
+                  >Santorini, Greece</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-300 hover:text-white transition-colors duration-300"
+                  >Maui, Hawaii</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-300 hover:text-white transition-colors duration-300"
+                  >Paris, France</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-300 hover:text-white transition-colors duration-300"
+                  >Tokyo, Japan</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="destinations.html"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Destinations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="packages.html"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#testimonials-us"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact-us"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Support</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Cancellation Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact-us"
+                  class="text-gray-400 hover:text-sky-500 transition-colors duration-300"
+                  >Customer Support</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Contact</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="bi bi-geo-alt-fill text-sky-500 mr-3 mt-1"></i>
+                <span class="text-gray-400"
+                  >123 Travel Street, Tourism City, 54321</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="bi bi-telephone-fill text-sky-500 mr-3 mt-1"></i>
+                <span class="text-gray-400">+234 (703) 567-8900</span>
+              </li>
+              <li class="flex items-start">
+                <i class="bi bi-envelope-fill text-sky-500 mr-3 mt-1"></i>
+                <span class="text-gray-400">info@travelgo.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="bi bi-clock-fill text-sky-500 mr-3 mt-1"></i>
+                <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 mb-8" />
+
+        <!-- Copyright -->
+        <div class="text-center text-gray-400">
+          <p>&copy; 2025 TravelGO. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 bg-sky-500 hover:bg-sky-600 text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
